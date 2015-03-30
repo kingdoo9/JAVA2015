@@ -16,7 +16,8 @@ import View.CLoginView;
 public class CMain {
 
 		public static void main(String[] args){
-			// Model-View_controller Pattern : 3-Tiers			
+			// Model-View_controller Pattern : 3-Tiers	
+			// ¼öÁ¤
 			CLoginView loginView = new CLoginView();
 			CMember member = loginView.login();	
 			CLoginControl loginControl = new CLoginControl();
