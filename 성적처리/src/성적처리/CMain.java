@@ -17,7 +17,7 @@ public class CMain {
 
 		public static void main(String[] args){
 			// Model-View_controller Pattern : 3-Tiers	
-			// 수정
+			// 수정123
 			CLoginView loginView = new CLoginView();
 			CMember member = loginView.login();	
 			CLoginControl loginControl = new CLoginControl();
