@@ -11,7 +11,7 @@ public class TextDAO implements IDAO{  //file을 open 하고 쓰는것!
 	//
 
 	@Override
-	public CEntity read(CEntity entity, String fileName) {
+	public Object read(CEntity entity, String fileName) {
 		// TODO Auto-generated method stub
 		try {
 			Scanner scanner = new Scanner (new File(fileName));

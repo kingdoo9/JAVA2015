@@ -2,7 +2,7 @@ package Control;
 
 import Entity.CMember;
 
-public class CLoginControl extends CControl{
+public class CLoginControl {
 	private CMember member;
 
 	public CMember login(CMember member) {

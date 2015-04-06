@@ -4,9 +4,9 @@ package View;
 
 import Entity.CMember;
 
-public class CLoginView extends CView{
+public class CLoginView {
 	
-	public void login() {
+	public CMember login() {
 
 //		Scanner scanner = new Scanner(System.in);
 		
@@ -20,7 +20,7 @@ public class CLoginView extends CView{
 		
 		//close scanner
 //		scanner.close();
-		member = (CMember) this.getControl().process(member);
+		return member;
 	}
 
 }
