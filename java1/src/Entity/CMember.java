@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Scanner;
 
 //Entity Class or value Class
-public class CMember extends CEntity{
+public class CMember extends CEntity implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private String userID, password;//이름, 주소, 주민번호.등등 attributes
