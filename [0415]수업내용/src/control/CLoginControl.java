@@ -1,17 +1,19 @@
 package control;
 
 import java.io.FileNotFoundException;
+
 import entity.CUser;
 import entity.VLogin;
 import entity.VUser;
-import entity.VUser.ELoginResult;
+import exception.PasswordNotMatchException;
+import exception.UserIDNotFoundException;
 public class CLoginControl extends CControl{
 	
-	public VUser login(VLogin vLogin)  //vLogin = input, Vuser = output
+	public VUser login(VLogin vLogin) throws UserIDNotFoundException  //vLogin = input, Vuser = output
+, FileNotFoundException, PasswordNotMatchException
 	{
 		VUser vUser = new VUser();
 
-			try {
 				CUser user = new CUser();
 
 				this.getDao().connect("member.txt");
@@ -19,25 +21,16 @@ public class CLoginControl extends CControl{
 				this.getDao().disconnect();
 
 				//result  정리 필요.!!!!!!!!!!!!!!!!!!!!!!!
-				if (user == null){
-					vUser.seteLoginresult(ELoginResult.idError);
-					return vUser;
+				if (user == null) throw new UserIDNotFoundException();{
 				}
-				if(!user.getPassword().equals(vLogin.getPassword())){
-					vUser.seteLoginresult(ELoginResult.passwordError);
-					return vUser;
+				if(!user.getPassword().equals(vLogin.getPassword()))
+					throw new PasswordNotMatchException(); {
 				}
-				vUser.seteLoginresult(ELoginResult.success);
 				//result  정리 필요.!!!!!!!!!!!!!!!!!!!!!!!
 				vUser.setname(user.getname());
 				vUser.setUserID(user.getID());
 				return vUser;
 
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				vUser.seteLoginresult(ELoginResult.fileNotFound);
-				return vUser;
-			}
 
 	}
 	
