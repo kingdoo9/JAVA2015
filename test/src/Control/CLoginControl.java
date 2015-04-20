@@ -7,7 +7,7 @@ public class CLoginControl {
 
 	public CMember login(CMember member) {
 		// TODO Auto-generated method stub
-		this.member = member;
+		member = (CMember)this.getDao().read(member,"member.txt");
 		return this.member;
 	}
 	
