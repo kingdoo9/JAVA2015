@@ -10,7 +10,7 @@ import exception.PasswordNotMatchException;
 import exception.UserIDNotFoundException;
 
 public class CLoginView extends CView{
-	public void login() throws FileNotFoundException, 
+	public VUser login() throws FileNotFoundException, 
 								UserIDNotFoundException, 
 								PasswordNotMatchException
 	{
@@ -26,5 +26,6 @@ public class CLoginView extends CView{
 		System.out.println("login result : " + vUser.getname());
 
 		scanner.close();
+		return vUser;
 	}
 }
