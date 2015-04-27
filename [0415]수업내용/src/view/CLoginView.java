@@ -1,7 +1,6 @@
 package view;
 
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.IOException;
 
 import control.CLoginControl;
 import entity.VLogin;
@@ -10,11 +9,10 @@ import exception.PasswordNotMatchException;
 import exception.UserIDNotFoundException;
 
 public class CLoginView extends CView{
-	public VUser login() throws FileNotFoundException, 
-								UserIDNotFoundException, 
-								PasswordNotMatchException
+	public VUser login() throws UserIDNotFoundException, 
+								PasswordNotMatchException, IOException
 	{
-		Scanner scanner = new Scanner(System.in);
+//		Scanner scanner = new Scanner(System.in);
 		VLogin vLogin = new VLogin();
 //		String userID = scanner.next();
 		vLogin.setUserID("id5");
@@ -25,7 +23,6 @@ public class CLoginView extends CView{
 		VUser vUser = (VUser) ((CLoginControl)this.getControl()).login(vLogin);
 		System.out.println("login result : " + vUser.getname());
 
-		scanner.close();
 		return vUser;
 	}
 }

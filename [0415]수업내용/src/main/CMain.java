@@ -1,11 +1,11 @@
 package main;
 
 import view.CLoginView;
-import view.CSugnagView;
+import view.CSugangView;
 import DAO.IDAO;
 import DAO.TextDAO;
+import control.CGangjwaControl;
 import control.CLoginControl;
-import control.CSugangControl;
 import entity.VUser;
 import view.CExceptionView;
 
@@ -25,8 +25,8 @@ public class CMain {
 			VUser vUser = loginView.login();
 			
 			//component
-			CSugnagView sugangView = new CSugnagView();
-			CSugangControl sugangControl = new CSugangControl();
+			CSugangView sugangView = new CSugangView();
+			CGangjwaControl sugangControl = new CGangjwaControl();
 			//association
 			sugangView.setControl(sugangControl);
 			sugangControl.setDao(dao);

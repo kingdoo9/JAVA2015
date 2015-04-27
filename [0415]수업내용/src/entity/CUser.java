@@ -1,5 +1,6 @@
 package entity;
 
+import java.io.BufferedWriter;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -23,7 +24,7 @@ public class CUser extends CEntity implements Serializable{
 
 	}
 
-	public void write(Scanner scanner) {
+	public void write(BufferedWriter writer) {
 		// TODO Auto-generated method stub
 		
 	}

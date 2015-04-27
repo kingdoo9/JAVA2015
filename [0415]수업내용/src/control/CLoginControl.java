@@ -1,6 +1,6 @@
 package control;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import entity.CUser;
 import entity.VLogin;
@@ -10,13 +10,13 @@ import exception.UserIDNotFoundException;
 public class CLoginControl extends CControl{
 	
 	public VUser login(VLogin vLogin) throws UserIDNotFoundException  //vLogin = input, Vuser = output
-, FileNotFoundException, PasswordNotMatchException
+, PasswordNotMatchException, IOException
 	{
 		VUser vUser = new VUser();
 
 				CUser user = new CUser();
 
-				this.getDao().connect("member.txt");
+				this.getDao().connect("member.txt","r");
 				user = (CUser)this.getDao().read(user, vLogin.getUserID());
 				this.getDao().disconnect();
 
