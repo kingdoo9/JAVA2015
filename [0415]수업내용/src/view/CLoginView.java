@@ -10,7 +10,7 @@ import exception.UserIDNotFoundException;
 
 public class CLoginView extends CView{
 	public VUser login() throws UserIDNotFoundException, 
-								PasswordNotMatchException, IOException
+								PasswordNotMatchException
 	{
 //		Scanner scanner = new Scanner(System.in);
 		VLogin vLogin = new VLogin();
@@ -20,9 +20,17 @@ public class CLoginView extends CView{
 //		String password = scanner.next();
 		vLogin.setPassword("pw5");
 		
-		VUser vUser = (VUser) ((CLoginControl)this.getControl()).login(vLogin);
-		System.out.println("login result : " + vUser.getname());
+		try {
+			VUser vUser;
+			vUser = (VUser) ((CLoginControl)this.getControl()).login(vLogin);
+			System.out.println("login result : " + vUser.getname());
+			return vUser;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		return vUser;
+
+		return null;
 	}
 }

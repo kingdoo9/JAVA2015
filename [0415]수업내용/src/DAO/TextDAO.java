@@ -21,9 +21,11 @@ public class TextDAO implements IDAO{
 		if(this.mode.equals("r")){
 			this.scanner = new Scanner (new File(name));
 		}else if(this.mode.equals("w")){
-			this.writer = new BufferedWriter(new FileWriter(name, true));
-		}else if( this.mode.equals("w+")){
+			//create new file
 			this.writer = new BufferedWriter(new FileWriter(name, false));
+		}else if( this.mode.equals("w+")){
+			//append item to file
+			this.writer = new BufferedWriter(new FileWriter(name, true));
 
 		}
 	}
@@ -65,7 +67,7 @@ public class TextDAO implements IDAO{
 	}
 	
 	 @Override
-	public void write(CEntity entity)
+	public void write(CEntity entity) throws IOException
 	{
 		entity.write(writer);
 	}

@@ -23,8 +23,13 @@ public class CGangjwaControl extends CControl {
 		return gangjwaList;
 	}
 
-	public void sugangSincheong(CSugang sugang) {
+	public void sugangSincheong(CSugang sugang) throws IOException {
 		// TODO Auto-generated method stub
+		this.getDao().connect("sugang.txt", "w+");
+		this.getDao().write(sugang);
+		this.getDao().disconnect();
+
+
 		
 	}
 
