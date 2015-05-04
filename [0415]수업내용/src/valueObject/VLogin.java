@@ -1,4 +1,4 @@
-package entity;
+package valueObject;
 
 
 //Entity class or value class

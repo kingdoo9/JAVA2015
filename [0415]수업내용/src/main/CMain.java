@@ -1,28 +1,29 @@
 package main;
 
-import view.CLoginView;
+import valueObject.VUser;
+import view.CExceptionView;
+import view.CMainView;
 import view.CSugangView;
 import DAO.IDAO;
 import DAO.TextDAO;
 import control.CGangjwaControl;
 import control.CLoginControl;
-import entity.VUser;
-import view.CExceptionView;
 
 public class CMain {
 	public static void main(String[] arg){
 
 		//start program
 		try {
+			/*
 			//component
-			CLoginView loginView = new CLoginView();	
+	
 			CLoginControl loginControl = new CLoginControl();
 			IDAO dao = new TextDAO();
 			//association
-			loginView.setControl(loginControl);
+			mainView.setControl(loginControl);
 			loginControl.setDao(dao);
 			//start
-			VUser vUser = loginView.login();
+
 			
 			//component
 			CSugangView sugangView = new CSugangView();
@@ -31,7 +32,10 @@ public class CMain {
 			sugangView.setControl(sugangControl);
 			sugangControl.setDao(dao);
 			//start
-			sugangView.sugangSincheong(vUser);
+			
+			*/
+			CMainView mainView = new CMainView();
+			mainView.show();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -4,15 +4,21 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
 
+import valueObject.VUser;
 import control.CGangjwaControl;
 import entity.CGangjwa;
 import entity.CSugang;
-import entity.VUser;
 import exception.NoSuchGangjwaException;
 
 public class CSugangView extends CView {
-	
-	public void sugangSincheong(VUser vUser){
+
+
+	public CSugangView() {
+		super("수강신청");
+		// TODO Auto-generated constructor stub
+	}
+
+	public void show(VUser vUser) throws NoSuchGangjwaException{
 		// TODO Auto-generated method stub
 		// show Gangjwa List
 		CGangjwaControl gangjwaControl = (CGangjwaControl)this.getControl();
@@ -36,10 +42,11 @@ public class CSugangView extends CView {
 				}
 			}
 			throw new NoSuchGangjwaException();
-			//throw new IOException("강좌 아이디가 일치 하지 않습니다.")
-		} catch (IOException | NoSuchGangjwaException e) {
+			//throw new IOException("강좌 아이디가 일치 하지 않습니다.")			
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+
 		}
 		// confirm sugnagnSingdcheong
 		// show result

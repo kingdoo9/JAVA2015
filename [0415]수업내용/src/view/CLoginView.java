@@ -1,36 +1,26 @@
 package view;
 
-import java.io.IOException;
+import java.util.Scanner;
 
-import control.CLoginControl;
-import entity.VLogin;
-import entity.VUser;
-import exception.PasswordNotMatchException;
-import exception.UserIDNotFoundException;
+import valueObject.VLogin;
 
-public class CLoginView extends CView{
-	public VUser login() throws UserIDNotFoundException, 
-								PasswordNotMatchException
-	{
-//		Scanner scanner = new Scanner(System.in);
+public class CLoginView extends CView {
+
+	public CLoginView() {
+		super("로그인 화면");
+		// TODO Auto-generated constructor stub
+	}
+
+	public void show(Scanner scanner){
+	
 		VLogin vLogin = new VLogin();
-//		String userID = scanner.next();
+		//String userID = scanner.next();
 		vLogin.setUserID("id5");
 		
-//		String password = scanner.next();
+		//String password = scanner.next();
 		vLogin.setPassword("pw5");
 		
-		try {
-			VUser vUser;
-			vUser = (VUser) ((CLoginControl)this.getControl()).login(vLogin);
-			System.out.println("login result : " + vUser.getname());
-			return vUser;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-
-		return null;
+//		VUser vUser = (VUser) ((CLoginControl)this.getControl()).login(vLogin);
+		System.out.println("login result : " + vLogin.getUserID());
 	}
 }
