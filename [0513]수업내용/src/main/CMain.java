@@ -12,13 +12,28 @@ public class CMain {
 
 	public static void main(String[] args){
 		IDAO dao;
+		try {
+			dao = new MySQL();
 			try {
-				dao = new MySQL();
-				dao.create();
-			} catch (ClassNotFoundException | SQLException e) {
+				dao.createAccount();
+				dao.createDB();
+				dao.createTable();
+				dao.insertData();
+				dao.updataData();
+				dao.selectData();
+				dao.deleteData();
+				dao.droptable();
+				dao.dropDB();
+				dao.dropAccount();
+			} catch ( SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		
 
 		
 /*		
