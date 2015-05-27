@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
 import com.mysql.jdbc.PreparedStatement;
 
@@ -50,8 +51,9 @@ public class MySQL implements IDAO{
 		connection.close();
 		statement.close();
 	}
+
 	@Override
-	public void createTable() throws SQLException {
+	public void createTable() throws Exception {
 		// TODO Auto-generated method stub
 		connection = DriverManager.getConnection(URL,
 				ID, PASSWORD);
@@ -62,7 +64,7 @@ public class MySQL implements IDAO{
 		statement.close();
 	}
 	@Override
-	public void insertData() throws SQLException {
+	public void insertData() throws Exception {
 		// TODO Auto-generated method stub
 		connection = DriverManager.getConnection(URL,
 				ID, PASSWORD);
@@ -95,7 +97,7 @@ public class MySQL implements IDAO{
 		pStatement.close();
 	}
 	@Override
-	public void updataData() throws SQLException {
+	public void updataData() throws Exception {
 		// TODO Auto-generated method stub
 		connection = DriverManager.getConnection(URL,
 				ID, PASSWORD);
@@ -107,7 +109,7 @@ public class MySQL implements IDAO{
 		statement.close();
 	}
 	@Override
-	public void selectData() throws SQLException {
+	public void selectData() throws Exception {
 		// TODO Auto-generated method stub
 		connection = DriverManager.getConnection(URL,
 				ID, PASSWORD);
@@ -129,7 +131,7 @@ public class MySQL implements IDAO{
 	}
 	
 	@Override
-	public void deleteData() throws SQLException {
+	public void deleteData() throws Exception {
 		// TODO Auto-generated method stub
 		connection = DriverManager.getConnection(URL,
 				ID, PASSWORD);
@@ -142,7 +144,7 @@ public class MySQL implements IDAO{
 		statement.close();
 	}
 	@Override
-	public void droptable() throws SQLException {
+	public void droptable() throws Exception {
 		// TODO Auto-generated method stub
 		connection = DriverManager.getConnection(URL,
 				ID, PASSWORD);
